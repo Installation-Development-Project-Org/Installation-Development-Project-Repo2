@@ -17,7 +17,7 @@ public class UltraSonic : MonoBehaviour
         OpenConnection();
     }
 
-    void Update() //Iasmina we need to add a check to see if the distance is => a certain number here 
+    void Update() //Iasmina we need to add a way of turnning the light on and off here when the sistance is => a cretain number 
     {
         updtePeriod += Time.deltaTime;
         if (updtePeriod > 0.2f)
