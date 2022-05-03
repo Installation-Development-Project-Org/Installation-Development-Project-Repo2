@@ -56,8 +56,9 @@
     <Compile Include="Assets\Scripts\Arduino.cs" />
     <Compile Include="Assets\Scripts\UltraSonic.cs" />
     <Compile Include="Assets\Scripts\RFID.cs" />
-    <Compile Include="Assets\Scripts\READ ME.cs" />
     <Compile Include="Assets\Scripts\ClownMovement.cs" />
+    <Compile Include="Assets\Scripts\READ ME.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
