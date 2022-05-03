@@ -53,10 +53,11 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\RFID.cs" />
     <Compile Include="Assets\Scripts\Arduino.cs" />
     <Compile Include="Assets\Scripts\UltraSonic.cs" />
+    <Compile Include="Assets\Scripts\RFID.cs" />
     <Compile Include="Assets\Scripts\READ ME.cs" />
+    <Compile Include="Assets\Scripts\ClownMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
