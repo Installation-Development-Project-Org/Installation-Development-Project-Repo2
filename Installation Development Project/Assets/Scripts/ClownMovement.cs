@@ -20,11 +20,12 @@ public class ClownMovement : MonoBehaviour
 
     void Update()
     {
-
+        NMAgent.destination = waypoints[1].transform.position;
     }
 
     void GoToWaypoint()
     {
-        NMAgent.SetDestination(waypoints[1].transform.position);
+        //NMAgent.SetDestination(waypoints[1].transform.position);
+        NMAgent.destination = waypoints[1].transform.position;
     }
 }

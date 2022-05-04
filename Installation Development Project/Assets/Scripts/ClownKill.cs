@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClownKill : MonoBehaviour
 {
     [SerializeField] Flashlight flashlightScript;
+    [SerializeField] PlayerHealth playerHealthScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,18 @@ public class ClownKill : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("trigger");
-        if (other.gameObject.tag == "KillClown" && flashlightScript.flashlightOn == true)
+        print("trigger kill");
+        print(other.name);
+        if (other.gameObject.tag == "KillClown" && flashlightScript.flashlightOn == true) // 
         {
             print("KillClown");
             Destroy(gameObject);
+        }
+        if (other.gameObject.tag == "Player") // && flashlightScript.flashlightOn == true
+        {
+            print("TakeLife");
+            playerHealthScript.TakeLife();
+            //Destroy(gameObject);
         }
     }
     

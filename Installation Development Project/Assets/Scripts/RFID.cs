@@ -19,6 +19,7 @@ public class RFID : MonoBehaviour
     public GameObject pushObject2;
 
     public bool cardAWasUsed = false;
+    public bool cardBWasUsed = false;
 
     void Start()
     {
@@ -42,6 +43,12 @@ public class RFID : MonoBehaviour
         if (cardAWasUsed == true && dataRFID == " 10 76 EC 34")
         {
             Destroy(pushObject2);
+            cardBWasUsed = true;
+        }
+        if (cardBWasUsed == true && dataRFID == " D0 D1 D8 34")
+        {
+            Destroy(pushObject2);
+            // do something - WIN PANEL 
         }
     }
 

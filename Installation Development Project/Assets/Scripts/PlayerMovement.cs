@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] GameObject[] waypoints;
     NavMeshAgent NMAgent;
-    float speed = 0.2f;
+    float speed = 0.005f;
     float time;
 
 
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             print("moving");
-            time = Time.deltaTime * speed * 0.05f;
+            time = Time.time * speed * 0.005f; //Time.deltaTime
             transform.position = Vector3.Lerp(transform.position, waypoints[1].transform.position, time);
         }
     }
