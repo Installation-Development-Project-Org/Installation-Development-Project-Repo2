@@ -58,6 +58,7 @@ public class AllInOneCode : MonoBehaviour
     void Update()
     {
         //testInt();
+        playerAndLightControls();
         casesetsList();
         if (dataRFID != null)
         {
@@ -164,7 +165,7 @@ public class AllInOneCode : MonoBehaviour
     //LIGHT and MOVEMENT
     void playerAndLightControls()
     {
-        if (lightInt > 70) //CHANGE VALUE HERE
+        if (lightInt > 50) //CHANGE VALUE HERE
         {
             print("light On");
             flashlight.SetActive(true);

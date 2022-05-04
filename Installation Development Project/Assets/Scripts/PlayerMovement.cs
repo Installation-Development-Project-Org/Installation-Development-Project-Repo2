@@ -40,18 +40,15 @@ public class PlayerMovement : MonoBehaviour
 
 
         //TEST MOVEMENT LERP
-        /*
+        
         if (Input.GetKey(KeyCode.P)) //Light sensor thing is off
         {
-            print("stopped");
-            transform.position = gameObject.transform.position;
+            Move();
         }
         else
         {
-            print("moving");
-            time = Time.time * speed * 0.005f; //Time.deltaTime
-            transform.position = Vector3.Lerp(transform.position, waypoints[1].transform.position, time);
-        }*/
+            
+        }
     }
 
     public void Move()

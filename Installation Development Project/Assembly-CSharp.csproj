@@ -57,16 +57,16 @@
     <Compile Include="Assets\Scripts\UltraSonic.cs" />
     <Compile Include="Assets\Scripts\RFID.cs" />
     <Compile Include="Assets\Scripts\Flashlight.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\CassetPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\ClownMovement.cs" />
     <Compile Include="Assets\Scripts\READ ME.cs" />
     <Compile Include="Assets\Scripts\ClownTrigger.cs" />
     <Compile Include="Assets\Scripts\ClownKill.cs" />
+    <Compile Include="Assets\Scripts\SoundClass.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\AllInOneCode.cs" />
-    <Compile Include="Assets\Scripts\SoundManager.cs" />
-    <Compile Include="Assets\Scripts\SoundClass.cs" />
-    <Compile Include="Assets\Scripts\CassetPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
