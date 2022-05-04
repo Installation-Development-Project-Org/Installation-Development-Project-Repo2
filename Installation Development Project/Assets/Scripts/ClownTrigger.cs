@@ -24,6 +24,7 @@ public class ClownTrigger : MonoBehaviour
             if (clown != null)
             {
                 clown.SetActive(true);
+                FindObjectOfType<SoundManager>().PlayAudio("Clown");
             }
         }
     }

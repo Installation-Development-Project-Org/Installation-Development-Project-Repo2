@@ -34,7 +34,9 @@ public class AllInOneCode : MonoBehaviour
     bool cardCWasUsed = false;
 
     //Flashlight variables
-    [SerializeField] Flashlight flashLightScript;
+    //[SerializeField] Flashlight flashLightScript;
+    [SerializeField] GameObject flashlight;
+    public bool flashlightOn;
 
     //Movement variables
     [SerializeField] PlayerMovement playerMovementScript;
@@ -50,33 +52,24 @@ public class AllInOneCode : MonoBehaviour
         OpenConnection();
         readThread.Start();
         cardAWasUsed = false;
-        
+
+        flashlight.SetActive(true);
 
         CongratsPanel.SetActive(false);
     }
 
     void Update()
     {
-        //testInt();
         playerAndLightControls();
-        casesetsList();
+        lastGameActiavte();
+        //casesetsList();
         if (dataRFID != null)
         {
             PrintInputs();
         }
-
-        if (Input.GetKey(KeyCode.L)) //CHANGE VALUE HERE
-        {
-            print("light On");
-            flashLightScript.LightOn();
-        }
-        else
-        {
-            flashLightScript.LightOFf();
-        }
     }
 
-    void casesetsList() //this needs to be separated because of the scene change
+    /*void casesetsList() //this needs to be separated because of the scene change
     {
         if (dataRFID == " 80 93 94 35")
         {
@@ -104,7 +97,7 @@ public class AllInOneCode : MonoBehaviour
             //Invoke("SwitchScene", 10f)  //however the timer is 
 
         }
-    }
+    }*/
 
     void lastGameActiavte()
     {
@@ -118,9 +111,9 @@ public class AllInOneCode : MonoBehaviour
             print("card A");
             cardAWasUsed = true;
         }
-        if (cardAWasUsed == true && dataRFID == " 40 5F 8B 35") //C
+        if (cardAWasUsed == true && dataRFID == " E0 74 EC 34") //E
         {
-            print("card C");
+            print("card E");
             //cardCWasUsed = true;
 
             CongratsPanel.SetActive(true);
@@ -175,7 +168,7 @@ public class AllInOneCode : MonoBehaviour
     //LIGHT and MOVEMENT
     void playerAndLightControls()
     {
-        if (lightInt > 50) //CHANGE VALUE HERE
+        /*if (lightInt > 50) //CHANGE VALUE HERE
         {
             print("light On");
             flashLightScript.LightOn();
@@ -183,9 +176,28 @@ public class AllInOneCode : MonoBehaviour
         else
         {
             flashLightScript.LightOFf();
-        }
+        }*/
 
-        if(distanceInt < 10) //CHANGE VALUE HERE
+        if(lightInt > 50)
+        {
+            print("light On");
+            LightOn();
+        }
+        else
+        {
+            LightOFf();
+        }
+        /*if(Input.GetKey(KeyCode.J))
+        {
+            print("light On");
+            LightOn();
+        }
+        else
+        {
+            LightOFf();
+        }*/
+
+        if (distanceInt < 10) //CHANGE VALUE HERE
         {
             playerMovementScript.Move();
         }
@@ -240,5 +252,17 @@ public class AllInOneCode : MonoBehaviour
     {
         sp.Write(rfidActiavte);
         print(rfidActiavte);
+    }
+    public void LightOn()
+    {
+        print("light On");
+        flashlight.SetActive(true);
+        flashlightOn = true;
+    }
+
+    public void LightOFf()
+    {
+        flashlight.SetActive(false);
+        flashlightOn = false;
     }
 }
