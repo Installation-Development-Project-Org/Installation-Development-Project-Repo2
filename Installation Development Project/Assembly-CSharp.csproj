@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\ClownTrigger.cs" />
     <Compile Include="Assets\Scripts\ClownKill.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\AllInOneCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
