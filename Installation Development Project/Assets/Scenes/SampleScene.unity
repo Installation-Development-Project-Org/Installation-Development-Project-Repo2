@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7c0272ef75384b8c2b16cdbd14559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllInOneCodeScript: {fileID: 0}
+  flashlightScript: {fileID: 1573247918}
   playerHealthScript: {fileID: 1573247910}
 --- !u!114 &37904332
 MonoBehaviour:
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7c0272ef75384b8c2b16cdbd14559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllInOneCodeScript: {fileID: 567875874}
+  flashlightScript: {fileID: 1573247918}
   playerHealthScript: {fileID: 1573247910}
 --- !u!65 &320782053
 BoxCollider:
@@ -1726,8 +1726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerActivate: 
   rfidActiavte: 
-  flashlight: {fileID: 504865829}
-  flashlightOn: 0
+  flashLightScript: {fileID: 1573247918}
   playerMovementScript: {fileID: 1573247917}
   CassetPlayerScript: {fileID: 0}
   CongratsPanel: {fileID: 1516100073}
@@ -2166,7 +2165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7c0272ef75384b8c2b16cdbd14559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllInOneCodeScript: {fileID: 0}
+  flashlightScript: {fileID: 0}
   playerHealthScript: {fileID: 0}
 --- !u!54 &768876615
 Rigidbody:
@@ -2717,7 +2716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7c0272ef75384b8c2b16cdbd14559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllInOneCodeScript: {fileID: 0}
+  flashlightScript: {fileID: 1573247918}
   playerHealthScript: {fileID: 1573247910}
 --- !u!65 &1040888614
 BoxCollider:
@@ -4687,7 +4686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Background
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: c98ccb2e6ca50b541aaff18dc8fd1d82, type: 3}
     loop: 1
     pitch: 0
     volume: 0
@@ -4705,6 +4704,12 @@ MonoBehaviour:
     volume: 0
     soundSource: {fileID: 0}
   - name: 16
+    clip: {fileID: 8300000, guid: dff27b54c0a2b6742bf866f61421b453, type: 3}
+    loop: 0
+    pitch: 0
+    volume: 0
+    soundSource: {fileID: 0}
+  - name: clown
     clip: {fileID: 8300000, guid: dff27b54c0a2b6742bf866f61421b453, type: 3}
     loop: 0
     pitch: 0
@@ -5083,7 +5088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7c0272ef75384b8c2b16cdbd14559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllInOneCodeScript: {fileID: 0}
+  flashlightScript: {fileID: 1573247918}
   playerHealthScript: {fileID: 1573247910}
 --- !u!65 &1998483651
 BoxCollider:

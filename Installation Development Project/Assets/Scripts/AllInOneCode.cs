@@ -34,8 +34,7 @@ public class AllInOneCode : MonoBehaviour
     bool cardCWasUsed = false;
 
     //Flashlight variables
-    [SerializeField] GameObject flashlight;
-    public bool flashlightOn;
+    [SerializeField] Flashlight flashLightScript;
 
     //Movement variables
     [SerializeField] PlayerMovement playerMovementScript;
@@ -51,6 +50,7 @@ public class AllInOneCode : MonoBehaviour
         OpenConnection();
         readThread.Start();
         cardAWasUsed = false;
+        
 
         CongratsPanel.SetActive(false);
     }
@@ -63,6 +63,16 @@ public class AllInOneCode : MonoBehaviour
         if (dataRFID != null)
         {
             PrintInputs();
+        }
+
+        if (Input.GetKey(KeyCode.L)) //CHANGE VALUE HERE
+        {
+            print("light On");
+            flashLightScript.LightOn();
+        }
+        else
+        {
+            flashLightScript.LightOFf();
         }
     }
 
@@ -168,13 +178,11 @@ public class AllInOneCode : MonoBehaviour
         if (lightInt > 50) //CHANGE VALUE HERE
         {
             print("light On");
-            flashlight.SetActive(true);
-            flashlightOn = true;
+            flashLightScript.LightOn();
         }
         else
         {
-            flashlight.SetActive(false);
-            flashlightOn = false;
+            flashLightScript.LightOFf();
         }
 
         if(distanceInt < 10) //CHANGE VALUE HERE

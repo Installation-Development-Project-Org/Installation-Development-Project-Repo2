@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     public void Move()
     {
         print("moving");
-        time = Time.time * speed * 0.005f; //Time.deltaTime
+        time = Time.time * speed * 0.0005f; //Time.deltaTime
         transform.position = Vector3.Lerp(transform.position, waypoints[1].transform.position, time);
     }
 

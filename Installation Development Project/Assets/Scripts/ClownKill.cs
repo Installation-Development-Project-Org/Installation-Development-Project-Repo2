@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ClownKill : MonoBehaviour
 {
-    //[SerializeField] Flashlight flashlightScript; - Old
-    [SerializeField] AllInOneCode AllInOneCodeScript;
+    [SerializeField] Flashlight flashlightScript;
+    //[SerializeField] AllInOneCode AllInOneCodeScript;
     [SerializeField] PlayerHealth playerHealthScript;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class ClownKill : MonoBehaviour
     {
         print("trigger kill");
         print(other.name);
-        if (other.gameObject.tag == "KillClown" && AllInOneCodeScript.flashlightOn == true) 
+        if (other.gameObject.tag == "KillClown" && flashlightScript.flashlightOn == true) 
         {
             print("KillClown");
             Destroy(gameObject);

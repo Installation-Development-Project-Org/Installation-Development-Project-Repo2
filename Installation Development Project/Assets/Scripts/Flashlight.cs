@@ -9,7 +9,7 @@ public class Flashlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,14 +17,29 @@ public class Flashlight : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.O)) //Light sensor thing is on
         {
-            print("light On");
+            /*print("light On");
             flashlight.SetActive(true);
-            flashlightOn = true;
+            flashlightOn = true;*/
+            LightOn();
         }
         else //Light sensor thing is off
         {
             flashlight.SetActive(false);
             flashlightOn = false;
         }
+
+
+    }
+    public void LightOn()
+    {
+        print("light On");
+        flashlight.SetActive(true);
+        flashlightOn = true;
+    }
+
+    public void LightOFf()
+    {
+        flashlight.SetActive(false);
+        flashlightOn = false;
     }
 }

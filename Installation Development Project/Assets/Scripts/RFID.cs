@@ -6,20 +6,28 @@ using System.Threading;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using System;
+using UnityEngine.SceneManagement;
 
 public class RFID : MonoBehaviour
 {
-    public static SerialPort sp = new SerialPort("COM5", 9600); // Change this to match your Arduino's COM Port.
+    public static SerialPort sp = new SerialPort("COM6", 9600); // Change this to match your Arduino's COM Port.
     Thread readThread = new Thread(ReadData);
     static bool checking = true;
     static string dataRFID;
 
+    //CassetPlayer variables
+    [SerializeField] CassetPlayer CassetPlayerScript;
+
     static public Text value;
-    public GameObject pushObject;
-    public GameObject pushObject2;
+    //public GameObject pushObject;
+    //public GameObject pushObject2;
 
     public bool cardAWasUsed = false;
     public bool cardBWasUsed = false;
+
+    bool cassetsE = false;
+    bool cassetsD = false;
+    bool cassetsC = false;
 
     void Start()
     {
@@ -30,10 +38,45 @@ public class RFID : MonoBehaviour
 
     void Update()
     {
-        TestDestroy();
+        casesetsList();
+        //TestDestroy();
+    }
+    void casesetsList() //this needs to be separated because of the scene change
+    {
+        if (dataRFID == " 80 93 94 35")
+        {
+            cassetsE = true;
+            CassetPlayerScript.PlayCasset16();
+            print("E Done");
+        }
+        if (dataRFID == " D0 D1 D8 34")
+        {
+            cassetsC = true;
+            CassetPlayerScript.PlayCasset10();
+            print("C Done");
+        }
+        if (dataRFID == " 60 6D 93 35")
+        {
+            cassetsD = true;
+            CassetPlayerScript.PlayCasset13();
+            print("D Done");
+        }
+        if (cassetsE == true && cassetsC == true && cassetsD == true)
+        {
+            //lastGameActiavte();
+            //SendDataActivateScanners();
+            //playerAndLightControls();
+
+            //CHANGE SCENE AFTER A DELAY 
+            //Invoke("Timer", 15f);       //animation 4s + sound whatever seconds
+            //Invoke("SwitchScene", 10f)  //however the timer is 
+            OnApplicationQuit();
+            SceneManager.LoadScene("SampleScene");
+            print("DONEEE");
+        }
     }
 
-    void TestDestroy() //Iasmina Add and change things here  
+    /*void TestDestroy() //Iasmina Add and change things here  
     {
         if (dataRFID == " 40 5F 8B 35")
         {
@@ -50,7 +93,7 @@ public class RFID : MonoBehaviour
             Destroy(pushObject2);
             // do something - WIN PANEL 
         }
-    }
+    }*/
 
     public static void ReadData()
     {
@@ -105,4 +148,5 @@ public class RFID : MonoBehaviour
     {
         sp.Close();
     }
+
 }
