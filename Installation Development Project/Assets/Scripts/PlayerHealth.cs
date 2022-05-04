@@ -35,8 +35,10 @@ public class PlayerHealth : MonoBehaviour
         {
             heart1.enabled = false;
         }
-        else
+        
+        if(heart3.enabled == false && heart2.enabled == false && heart1.enabled == false)
         {
+            print("panel");
             GameOverPanel.SetActive(true);
         }
     }
