@@ -64,6 +64,9 @@
     <Compile Include="Assets\Scripts\ClownKill.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\AllInOneCode.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\SoundClass.cs" />
+    <Compile Include="Assets\Scripts\CassetPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

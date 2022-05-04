@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ClownTrigger : MonoBehaviour
 {
-
     [SerializeField] GameObject clown;
-    // Start is called before the first frame update
+
     void Start()
     {
         if(clown != null)
@@ -16,11 +15,6 @@ public class ClownTrigger : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,7 +25,6 @@ public class ClownTrigger : MonoBehaviour
             {
                 clown.SetActive(true);
             }
-
         }
     }
 }

@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //OLD MOVEMENT
+
         //time = Time.deltaTime * speed * 0.2f;
         //transform.position = Vector3.Lerp(transform.position, waypoints[1].transform.position, time);
         
@@ -36,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
             NMAgent.destination = waypoints[1].transform.position;
         }*/
 
+
+        //TEST MOVEMENT LERP
+        /*
         if (Input.GetKey(KeyCode.P)) //Light sensor thing is off
         {
             print("stopped");
@@ -46,6 +51,19 @@ public class PlayerMovement : MonoBehaviour
             print("moving");
             time = Time.time * speed * 0.005f; //Time.deltaTime
             transform.position = Vector3.Lerp(transform.position, waypoints[1].transform.position, time);
-        }
+        }*/
+    }
+
+    public void Move()
+    {
+        print("moving");
+        time = Time.time * speed * 0.005f; //Time.deltaTime
+        transform.position = Vector3.Lerp(transform.position, waypoints[1].transform.position, time);
+    }
+
+    public void StopMoving()
+    {
+        print("stopped");
+        transform.position = gameObject.transform.position;
     }
 }

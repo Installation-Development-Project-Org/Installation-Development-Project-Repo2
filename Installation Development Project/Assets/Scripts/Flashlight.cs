@@ -15,13 +15,13 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.O)) //Light sensor thing is off
+        if (Input.GetKey(KeyCode.O)) //Light sensor thing is on
         {
             print("light On");
             flashlight.SetActive(true);
             flashlightOn = true;
         }
-        else
+        else //Light sensor thing is off
         {
             flashlight.SetActive(false);
             flashlightOn = false;
