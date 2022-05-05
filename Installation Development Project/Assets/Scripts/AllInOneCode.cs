@@ -43,9 +43,9 @@ public class AllInOneCode : MonoBehaviour
 
     //UI
     [SerializeField] GameObject CongratsPanel;
-    [SerializeField] Image Image13;
-    [SerializeField] Image Image10;
-    [SerializeField] Image Image16;
+    [SerializeField] Image image13;
+    [SerializeField] Image image10;
+    [SerializeField] Image image16;
 
     void Start()
     {
@@ -57,9 +57,9 @@ public class AllInOneCode : MonoBehaviour
 
         CongratsPanel.SetActive(false);
 
-        Image13.enabled = false;
-        Image10.enabled = false;
-        Image16.enabled = false;
+        image13.enabled = false;
+        image10.enabled = false;
+        image16.enabled = false;
     }
 
     void Update()
@@ -80,18 +80,18 @@ public class AllInOneCode : MonoBehaviour
         {
             print("card B");
             cardBWasUsed = true;
-            Image13.enabled = false;
+            image13.enabled = true;
         }
         if (cardBWasUsed == true && dataRFID == " 40 5F 8B 35") //A
         {
             print("card A");
             cardAWasUsed = true;
-            Image10.enabled = false;
+            image10.enabled = true;
         }
         if (cardAWasUsed == true && dataRFID == " E0 74 EC 34") //E
         {
             print("card E");
-            Image16.enabled = false;
+            image16.enabled = true;
 
             Invoke("ActivateCongratsPanel", 5f);
         }
