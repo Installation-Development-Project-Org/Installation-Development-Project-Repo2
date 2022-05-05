@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\SoundClass.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\AllInOneCode.cs" />
+    <Compile Include="Assets\Scripts\Coutdown.cs" />
+    <Compile Include="Assets\Scripts\coiutdownCHnageSCene.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

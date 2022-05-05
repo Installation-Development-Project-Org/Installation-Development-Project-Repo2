@@ -27,6 +27,8 @@ public class RFID : MonoBehaviour
     bool cassetsD = false;
     bool cassetsC = false;
 
+    public int coutdownTime;
+
     void Start()
     {
         OpenConnection();
@@ -61,7 +63,7 @@ public class RFID : MonoBehaviour
         if (cassetsE == true && cassetsC == true && cassetsD == true)
         {
             OnApplicationQuit();
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("PickCardScene");
         }
     }
 
@@ -119,4 +121,20 @@ public class RFID : MonoBehaviour
         sp.Close();
     }
 
+    /*IEnumerator CountDOwnTOSTart()
+    {
+        while (coutdownTime > 0)
+        {
+            coutdownDisplay.text = coutdownTime.ToString();
+
+            yield return new WaitForSeconds(1f);
+
+            coutdownTime--;
+        }
+
+        coutdownDisplay.text = "Game Over";
+        print("CHangeSceme");
+
+        coutdownDisplay.gameObject.SetActive(false);
+    }*/
 }
