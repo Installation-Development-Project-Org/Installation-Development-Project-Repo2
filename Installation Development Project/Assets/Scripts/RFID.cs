@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class RFID : MonoBehaviour
 {
-    public static SerialPort sp = new SerialPort("COM6", 9600); // Change this to match your Arduino's COM Port.
+    public static SerialPort sp = new SerialPort("COM6", 9600); 
     Thread readThread = new Thread(ReadData);
     static bool checking = true;
     static string dataRFID;
@@ -19,8 +19,6 @@ public class RFID : MonoBehaviour
     [SerializeField] CassetPlayer CassetPlayerScript;
 
     static public Text value;
-    //public GameObject pushObject;
-    //public GameObject pushObject2;
 
     public bool cardAWasUsed = false;
     public bool cardBWasUsed = false;
@@ -39,9 +37,8 @@ public class RFID : MonoBehaviour
     void Update()
     {
         casesetsList();
-        //TestDestroy();
     }
-    void casesetsList() //this needs to be separated because of the scene change
+    void casesetsList() 
     {
         if (dataRFID == " 80 93 94 35")
         {
@@ -63,37 +60,10 @@ public class RFID : MonoBehaviour
         }
         if (cassetsE == true && cassetsC == true && cassetsD == true)
         {
-            //lastGameActiavte();
-            //SendDataActivateScanners();
-            //playerAndLightControls();
-
-            //CHANGE SCENE AFTER A DELAY 
-            //Invoke("Timer", 15f);       //animation 4s + sound whatever seconds
-            //Invoke("SwitchScene", 10f)  //however the timer is 
             OnApplicationQuit();
             SceneManager.LoadScene("SampleScene");
-            print("DONEEE");
         }
     }
-
-    /*void TestDestroy() //Iasmina Add and change things here  
-    {
-        if (dataRFID == " 40 5F 8B 35")
-        {
-            Destroy(pushObject);
-            cardAWasUsed = true;
-        }
-        if (cardAWasUsed == true && dataRFID == " 10 76 EC 34")
-        {
-            Destroy(pushObject2);
-            cardBWasUsed = true;
-        }
-        if (cardBWasUsed == true && dataRFID == " D0 D1 D8 34")
-        {
-            Destroy(pushObject2);
-            // do something - WIN PANEL 
-        }
-    }*/
 
     public static void ReadData()
     {

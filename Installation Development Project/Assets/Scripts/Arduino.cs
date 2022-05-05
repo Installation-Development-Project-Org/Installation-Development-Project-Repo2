@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Arduino : MonoBehaviour
 {
-    public static SerialPort sp = new SerialPort("COM5", 9600); // Change this to match your Arduino's COM Port.
+    public static SerialPort sp = new SerialPort("COM5", 9600); 
     Thread readThread = new Thread(ReadData);
     static bool checking = true;
     static public Text value;

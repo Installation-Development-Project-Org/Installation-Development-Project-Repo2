@@ -4,20 +4,8 @@ using UnityEngine;
 
 public class ClownKill : MonoBehaviour
 {
-    //[SerializeField] Flashlight flashlightScript;
     [SerializeField] AllInOneCode AllInOneCodeScript;
     [SerializeField] PlayerHealth playerHealthScript;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,11 +16,10 @@ public class ClownKill : MonoBehaviour
             print("KillClown");
             Destroy(gameObject);
         }
-        if (other.gameObject.tag == "Player") // && flashlightScript.flashlightOn == true
+        if (other.gameObject.tag == "Player") 
         {
             print("TakeLife");
             playerHealthScript.TakeLife();
-            //Destroy(gameObject);
         }
     }
     

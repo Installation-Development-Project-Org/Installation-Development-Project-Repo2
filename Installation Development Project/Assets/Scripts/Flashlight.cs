@@ -9,14 +9,11 @@ public class Flashlight : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.O)) //Light sensor thing is on
+        if (Input.GetKey(KeyCode.O)) //Light sensor is on
         {
-            /*print("light On");
-            flashlight.SetActive(true);
-            flashlightOn = true;*/
             LightOn();
         }
-        else //Light sensor thing is off
+        else //Light sensor is off
         {
             flashlight.SetActive(false);
             flashlightOn = false;

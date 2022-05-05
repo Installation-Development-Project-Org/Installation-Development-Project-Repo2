@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UltraSonic : MonoBehaviour
 {
-    public static SerialPort sp = new SerialPort("COM5", 9600); // Change this to match your Arduino's COM Port.
+    public static SerialPort sp = new SerialPort("COM5", 9600); 
     public int message2;
     private float updtePeriod = 0.0f;
     public GameObject pushObject;
@@ -17,7 +17,7 @@ public class UltraSonic : MonoBehaviour
         OpenConnection();
     }
 
-    void Update() //Iasmina we need to add a way of turnning the light on and off here when the sistance is => a cretain number 
+    void Update() 
     {
         updtePeriod += Time.deltaTime;
         if (updtePeriod > 0.2f)
